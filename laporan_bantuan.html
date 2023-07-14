@@ -35,7 +35,7 @@
     <div class="container-xxl position-relative bg-white d-flex p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-warning" style="width: 3rem; height: 3rem;" role="status">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
@@ -46,40 +46,33 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
                 <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-warning"><i class="fa fa-hashtag me-2"></i>SIPELBA</h3>
+                    <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>DASHMIN</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
-                        <!-- <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;"> -->
+                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
-                    <!-- <div class="ms-3">
+                    <div class="ms-3">
                         <h6 class="mb-0">Jhon Doe</h6>
                         <span>Admin</span>
-                    </div> -->
+                    </div>
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="index.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Rekapan Laporan</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="button.html" class="dropdown-item">Laporan Bencana</a>
-                            <a href="laporan_bantuan.html" class="dropdown-item">Laporan Bantuan</a>
-                            <a href="element.html" class="dropdown-item">Laporan Penanganan</a>
+                            <a href="button.html" class="dropdown-item">Buttons</a>
+                            <a href="typography.html" class="dropdown-item">Typography</a>
+                            <a href="element.html" class="dropdown-item">Other Elements</a>
                         </div>
                     </div>
                     <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Input Laporan</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="button.html" class="dropdown-item">Laporan Bencana</a>
-                            <a href="form_bantuan.html" class="dropdown-item">Laporan Bantuan</a>
-                            <a href="element.html" class="dropdown-item">Laporan Penanganan</a>
-                        </div>
-                    </div>
-                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
+                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
+                    <a href="table.html" class="nav-item nav-link active"><i class="fa fa-table me-2"></i>Tables</a>
                     <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
-                    <a href="chart.html" class="nav-item nav-link"><i class="bi bi-person-lines-fill"></i>Kelola Account</a>
+                    <a href="kelola_akun.html" class="nav-item nav-link"><i class="bi bi-person-lines-fill"></i>Kelola Account</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -100,7 +93,7 @@
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
                 <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
-                    <h2 class="text-warning mb-0"><i class="fa fa-hashtag"></i></h2>
+                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
                 </a>
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
@@ -188,50 +181,76 @@
             <!-- Navbar End -->
 
 
-            <!-- Form Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-50">
+            <!-- Table Start -->
+                    <div class="col-12">
                         <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Form Pelaporan Bantuan</h6>
-                            <form>
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Jenis Bencana</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Kecamatan</label>
-                                    <input type="email" class="form-control" id="exampleInputPassword1">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Desa</label>
-                                    <input type="email" class="form-control" id="exampleInputPassword1">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Dusun</label>
-                                    <input type="email" class="form-control" id="exampleInputPassword1">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Jumlah KK terdampak</label>
-                                    <input type="email" class="form-control" id="exampleInputPassword1">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Diberikan pada tanggal</label>
-                                    <input type="date" class="form-control" id="exampleInputPassword1">
-                                </div>
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a comment here"
-                                        id="floatingTextarea" style="height: 150px;"></textarea>
-                                    <label for="floatingTextarea">Bantuan apa yang diberikan</label>
-                                </div>
-                                <hr>
-                                <button type="submit" class="btn btn-warning">Laporkan</button>
-                            </form>
+                            <h6 class="mb-4">Data Laporan Bantuan</h6>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Jenis Bencana</th>
+                                            <th scope="col">Kecamatan</th>
+                                            <th scope="col">Desa</th>
+                                            <th scope="col">Dusun</th>
+                                            <th scope="col">Jumlah KK</th>
+                                            <th scope="col">Usia terdampak</th>
+                                            <th scope="col">Bantuan yang diberikan</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Banjir</td>
+                                            <td>Bululawang</td>
+                                            <td>Krebet</td>
+                                            <td>Lorem ipsum</td>
+                                            <td>100</td>
+                                            <td>Balita,Lansia</td>
+                                            <td>Beras 10000 kg, pempes 100</td>
+                                            <td>
+                                            <button type="submit" class="btn btn-warning"><i class="bi bi-pencil"></i></button>
+                                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>Gempa</td>
+                                            <td>Gondanlegi</td>
+                                            <td>Bulupitu</td>
+                                            <td>Lorem ipsum</td>
+                                            <td>150</td>
+                                            <td>Balita,Lansia</td>
+                                            <td>Beras 15000 kg, pempes 100</td>
+                                            <td>
+                                            <button type="submit" class="btn btn-warning"><i class="bi bi-pencil"></i></button>
+                                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>Banjir</td>
+                                            <td>Dau</td>
+                                            <td>Sumbersekar</td>
+                                            <td>Lorem ipsum</td>
+                                            <td>200</td>
+                                            <td>Balita,Lansia</td>
+                                            <td>Beras 20000 kg, pempes 100</td>
+                                            <td>
+                                            <button type="submit" class="btn btn-warning"><i class="bi bi-pencil"></i></button>
+                                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>                      
+                            </div>
                         </div>
                     </div>
-                    
-            <!-- Form End -->
+                </div>
+            </div>
+            <!-- Table End -->
 
 
             <!-- Footer Start -->
@@ -254,7 +273,7 @@
 
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-warning btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
     <!-- JavaScript Libraries -->
