@@ -32,6 +32,56 @@
 </head>
 
 <body>
+    <!-- Bagian body HTML -->
+    
+    <?php
+    // Mengimpor file connection.php
+    require 'connection.php';
+
+    // Menangkap data yang dikirim melalui method POST
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $tanggal = $_POST['tanggal'];
+        $waktu = $_POST['waktu'];
+        $alamat = $_POST['alamat'];
+        $rw = $_POST['rw'];
+        $rt = $_POST['rt'];
+        $dusun = $_POST['dusun'];
+        $desa = $_POST['desa'];
+        $kecamatan = $_POST['kecamatan'];
+        $koordinat = $_POST['koordinat'];
+        $jenis_bencana = $_POST['jenis_bencana'];
+        $kronologi = $_POST['kronologi'];
+        $kerusakan = $_POST['kerusakan'];
+        $korban_jiwa = $_POST['korban_jiwa'];
+        $korban_lk = $_POST['korban_lk'];
+        $korban_pr = $_POST['korban_pr'];
+        $fasum = $_POST['fasum'];
+        $infra = $_POST['infra'];
+        $harta = $_POST['harta'];
+        $unit_usaha = $_POST['unit_usaha'];
+        $kerugian = $_POST['kerugian'];
+        $nama_korban = $_POST['nama_korban'];
+        $jumlah_luka = $_POST['jumlah_luka'];
+        $jumlah_hilang = $_POST['jumlah_hilang'];
+        $keterangan_bantuan = $_POST['keterangan_bantuan'];
+        $petugas_piket = $_POST['petugas_piket'];
+        // Tambahkan variabel dan nama kolom lainnya sesuai dengan data yang ingin Anda masukkan ke tabel
+
+        // Query SQL untuk memasukkan data ke dalam tabel input_laporan_bencana
+        $query = "INSERT INTO input_laporan_bencana (tanggal, waktu, alamat, rw, rt, dusun, desa, kecamatan, koordinat, jenis_bencana, kronologi, kerusakan, korban_jiwa, korban_lk, korban_pr, fasum, infra, harta, unit_usaha, kerugian, nama_korban, jumlah_luka, jumlah_hilang, keterangan_bantuan, petugas_piket) VALUES ('$tanggal', '$waktu', '$alamat', '$rw', '$rt', '$dusun', '$desa', '$kecamatan', '$koordinat','$jenis_bencana', '$kronologi', '$kerusakan', '$korban_jiwa', '$korban_lk', '$korban_pr', '$fasum', '$infra', '$harta', '$unit_usaha', '$kerugian', '$nama_korban', '$jumlah_luka', '$jumlah_hilang', '$keterangan_bantuan', '$petugas_piket')";
+        // Tambahkan query untuk memasukkan data ke dalam kolom lainnya sesuai dengan id dan nama kolom
+
+        // Jalankan query
+        $result = mysqli_query($connection, $query);
+
+        // Periksa apakah data berhasil dimasukkan
+        if ($result) {
+            echo "Data berhasil dimasukkan ke dalam tabel input_laporan_bencana.";
+        } else {
+            echo "Data gagal dimasukkan ke dalam tabel input_laporan_bencana.";
+        }
+    }
+    ?>
     <div class="container-xxl position-relative bg-white d-flex p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -46,7 +96,7 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
                 <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>SIPELBA</h3>
+                    <h3 class="text-warning"><i class="fa fa-hashtag me-2"></i>SIPELBA</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -72,11 +122,12 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Input Laporan</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="form_bencana.html" class="dropdown-item">Laporan Bencana</a>
-                            <a href="form_bantuan.html" class="dropdown-item">Laporan Bantuan</a>
+                            <a href="laporan_bantuan.html" class="dropdown-item">Laporan Bantuan</a>
                             <a href="element.html" class="dropdown-item">Laporan Penanganan</a>
                         </div>
                     </div>
                     <a href="kelola_akun.html" class="nav-item nav-link"><i class="bi bi-person-lines-fill"></i>Kelola Account</a>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -88,7 +139,7 @@
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
                 <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
-                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+                    <h2 class="text-warning mb-0"><i class="fa fa-hashtag"></i></h2>
                 </a>
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
@@ -96,7 +147,7 @@
                 <form class="d-none d-md-flex ms-4">
                     <input class="form-control border-0" type="search" placeholder="Search">
                 </form>
-                <div class="navbar-nav align-items-center ms-auto">
+                <!-- <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-envelope me-lg-2"></i>
@@ -171,7 +222,7 @@
                             <a href="#" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </nav>
             <!-- Navbar End -->
 
@@ -181,27 +232,27 @@
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-50">
                         <div class="bg-light rounded h-100 p-4">
-                            <form>
+                            <form method="POST" action="">
                                 <h6 class="mb-4">Waktu Terjadi Bencana</h6>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Tanggal Kejadian</label>
+                                <label for="tanggal" class="form-label">Tanggal Kejadian</label>
                                 <input type="date" class="form-control" id="tanggal" name="tanggal"
-                                    aria-describedby="emailHelp">
+                                    aria-describedby="emailHelp"> 
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Waktu Kejadian</label>
-                                <input type="text" class="form-control" id="jam" name="jam"
+                                <label for="waktu" class="form-label">Waktu Kejadian</label>
+                                <input type="text" class="form-control" id="waktu" name="waktu"
                                     aria-describedby="emailHelp">
                             </div>
                             <h6 class="mb-4">Lokasi Kejadian</h6>
-                            <label for="exampleInputEmail1" class="form-label">Alamat Lokasi Bencana</label>
+                            <label for="alamat" class="form-label">Alamat Lokasi Bencana</label>
                             <div class="form-floating">
                                 <textarea class="form-control" placeholder="Leave a comment here"
-                                    id="alamat" style="height: 150px;"></textarea>
+                                    id="alamat" name="alamat" style="height: 150px;"></textarea>
                                 <label for="floatingTextarea">exp: jl.moh.syafe'i no.1</label>
                             </div>
-                            <label for="exampleInputEmail1" class="form-label">RW</label>
-                            <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+                            <label for="rw" class="form-label">RW</label>
+                            <select class="form-select form-select-sm mb-3" id="rw" name="rw" aria-label=".form-select-sm example">
                                 <option selected>Pilih RW</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -210,8 +261,8 @@
                                 <option value="5">5</option>
                                 <option value="6">6</option>
                             </select>
-                            <label for="exampleInputEmail1" class="form-label">RT</label>
-                            <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+                            <label for="rt" class="form-label">RT</label>
+                            <select class="form-select form-select-sm mb-3" id="rt" name="rt" aria-label=".form-select-sm example">
                                 <option selected>Pilih RT</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -220,8 +271,8 @@
                                 <option value="5">5</option>
                                 <option value="6">6</option>
                             </select>
-                            <label for="exampleInputEmail1" class="form-label">Dusun</label>
-                            <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+                            <label for="dusun" class="form-label">Dusun</label>
+                            <select class="form-select form-select-sm mb-3" id="dusun" name="dusun" aria-label=".form-select-sm example">
                                 <option selected>Pilih Dusun</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -230,8 +281,8 @@
                                 <option value="5">5</option>
                                 <option value="6">6</option>
                             </select>
-                            <label for="exampleInputEmail1" class="form-label">Desa</label>
-                            <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+                            <label for="desa" class="form-label">Desa</label>
+                            <select class="form-select form-select-sm mb-3" id="desa" name="desa" aria-label=".form-select-sm example">
                                 <option selected>Pilih Desa</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -240,8 +291,8 @@
                                 <option value="5">5</option>
                                 <option value="6">6</option>
                             </select>
-                            <label for="exampleInputEmail1" class="form-label">Kecamatan</label>
-                            <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+                            <label for="kecamatan" class="form-label">Kecamatan</label>
+                            <select class="form-select form-select-sm mb-3" id="kecamatan" name="kecamatan" aria-label=".form-select-sm example">
                                 <option selected>Pilih Kecamatan</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -251,128 +302,128 @@
                                 <option value="6">6</option>
                             </select>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Koordinat</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                <label for="koordinat" class="form-label">Koordinat</label>
+                                <input type="text" class="form-control" id="koordinat" name="koordinat"
                                     aria-describedby="emailHelp">
-                                <div id="emailHelp" class="form-text">Ambil dari google maps
+                                <div class="form-text">Ambil dari google maps
                                 </div>
                             </div>
                             <br><h6 class="mb-4">Kejadian Musibah/ Bencana</h6>
-                            <label for="exampleInputEmail1" class="form-label">Jenis Bencana/ Kejadian</label>
-                            <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+                            <label for="jenis_bencana" class="form-label">Jenis Bencana/ Kejadian</label>
+                            <select class="form-select form-select-sm mb-3" id="jenis_bencana" name="jenis_bencana" aria-label=".form-select-sm example">
                                 <option selected>Pilih Jenis Bencara</option>
-                                <option value="1">Tanah Longsor</option>
-                                <option value="2">Banjir Luapan</option>
-                                <option value="3">Tanah Ambles</option>
-                                <option value="4">Angin Kencang</option>
-                                <option value="5">Karhutlah</option>
-                                <option value="6">Banjir Bandang</option>
-                                <option value="7">Tanah Gerak</option>
-                                <option value="8">Pohon Tumbang</option>
-                                <option value="9">Kebakaran</option>
-                                <option value="10">Rumah Tersambar Petir</option>
-                                <option value="11">Atap Rumah Ambruk</option>
+                                <option value="Tanah Longsor">Tanah Longsor</option>
+                                <option value="Banjir Luapan">Banjir Luapan</option>
+                                <option value="Tanah Ambles">Tanah Ambles</option>
+                                <option value="Angin Kencang">Angin Kencang</option>
+                                <option value="Karhutlah">Karhutlah</option>
+                                <option value="Banjir Bandang">Banjir Bandang</option>
+                                <option value="Tanah Gerak">Tanah Gerak</option>
+                                <option value="Pohon Tumbang">Pohon Tumbang</option>
+                                <option value="Kebakaran">Kebakaran</option>
+                                <option value="Rumah Tersambar Petir">Rumah Tersambar Petir</option>
+                                <option value="Atap Rumah Ambruk">Atap Rumah Ambruk</option>
                             </select>
-                            <label for="exampleInputEmail1" class="form-label">Kronologi Kejadian</label>
+                            <label for="kronologi" class="form-label">Kronologi Kejadian</label>
                             <div class="form-floating">
                                 <textarea class="form-control" placeholder="Leave a comment here"
-                                    id="floatingTextarea" style="height: 150px;"></textarea>
+                                    id="kronologi" name="kronologi" style="height: 150px;"></textarea>
                                 <label for="floatingTextarea">Jelaskan Kronologi Kejadian</label>
                             </div>
                             <br><h6 class="mb-4">Dampak</h6>
-                            <label for="exampleInputEmail1" class="form-label">Kerusakan Rumah :</label>
+                            <label for="kerusakan" class="form-label">Kerusakan Rumah :</label>
                             <div class="form-floating">
                                 <textarea class="form-control" placeholder="Leave a comment here"
-                                    id="floatingTextarea" style="height: 150px;"></textarea>
+                                    id="kerusakan" name="kerusakan" style="height: 150px;"></textarea>
                                 <label for="floatingTextarea"></label>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Jumlah Korban Jiwa</label>
-                                <input type="Number" class="form-control" id="exampleInputEmail1"
+                                <label for="korban_jiwa" class="form-label">Jumlah Korban Jiwa</label>
+                                <input type="Number" class="form-control" id="korban_jiwa" name="korban_jiwa"
                                     aria-describedby="emailHelp">
                                 <div id="emailHelp" class="form-text">
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Jumlah Korban Laki-laki</label>
-                                <input type="Number" class="form-control" id="exampleInputEmail1"
+                                <label for="korban_lk" class="form-label">Jumlah Korban Laki-laki</label>
+                                <input type="Number" class="form-control" id="korban_lk" name="korban_lk"
                                     aria-describedby="emailHelp">
                                 <div id="emailHelp" class="form-text">
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Jumlah Korban Perempuan</label>
-                                <input type="Number" class="form-control" id="exampleInputEmail1"
+                                <label for="korban_pr" class="form-label">Jumlah Korban Perempuan</label>
+                                <input type="Number" class="form-control" id="korban_pr" name="korban_pr"
                                     aria-describedby="emailHelp">
                                 <div id="emailHelp" class="form-text">
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Kerusakan Fasilitas Umum</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                <label for="fasum" class="form-label">Kerusakan Fasilitas Umum</label>
+                                <input type="text" class="form-control" id="fasum" name="fasum"
                                     aria-describedby="emailHelp">
                                 <div id="emailHelp" class="form-text">
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Kerusakan Infrastruktur</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                <label for="infra" class="form-label">Kerusakan Infrastruktur</label>
+                                <input type="text" class="form-control" id="infra" name="infra"
                                     aria-describedby="emailHelp">
                                 <div id="emailHelp" class="form-text">
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Harta Benda</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                <label for="harta" class="form-label">Harta Benda</label>
+                                <input type="text" class="form-control" id="harta" name="harta"
                                     aria-describedby="emailHelp">
                                 <div id="emailHelp" class="form-text">
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Unit Usaha</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                <label for="unit_usaha" class="form-label">Unit Usaha</label>
+                                <input type="text" class="form-control" id="unit_usaha" name="unit_usaha"
                                     aria-describedby="emailHelp">
                                 <div id="emailHelp" class="form-text">
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Kerugian (Rp)</label>
-                                <input type="number" class="form-control" id="exampleInputEmail1"
+                                <label for="kerugian" class="form-label">Kerugian (Rp)</label>
+                                <input type="number" class="form-control" id="kerugian" name="kerugian"
                                     aria-describedby="emailHelp">
                                 <div id="emailHelp" class="form-text">
                                 </div>
                             </div>
                             <br><h6 class="mb-4">Korban</h6>
-                            <label for="exampleInputEmail1" class="form-label">Nama-nama Korban terkena dampak</label>
+                            <label for="nama_korban" class="form-label">Nama-nama Korban terkena dampak</label>
                             <div class="form-floating">
                                 <textarea class="form-control" placeholder="Leave a comment here"
-                                    id="floatingTextarea" style="height: 150px;"></textarea>
+                                    id="nama_korban" name="nama_korban" style="height: 150px;"></textarea>
                                 <label for="floatingTextarea">Tuliskan nama-nama korban</label>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Jumlah Luka-luka</label>
-                                <input type="number" class="form-control" id="exampleInputEmail1"
+                                <label for="jumlah_luka" class="form-label">Jumlah Luka-luka</label>
+                                <input type="number" class="form-control" id="jumlah_luka" name="jumlah_luka"
                                     aria-describedby="emailHelp">
                                 <div id="emailHelp" class="form-text">
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Jumlah Hilang</label>
-                                <input type="number" class="form-control" id="exampleInputEmail1"
+                                <label for="jumlah_hilang" class="form-label">Jumlah Hilang</label>
+                                <input type="number" class="form-control" id="jumlah_hilang" name="jumlah_hilang"
                                     aria-describedby="emailHelp">
                                 <div id="emailHelp" class="form-text">
                                 </div>
                             </div>
-                            <label for="exampleInputEmail1" class="form-label">Keterangan Bantuan yang telah diberikan</label>
+                            <label for="keterangan_bantuan" class="form-label">Keterangan Bantuan yang telah diberikan</label>
                             <div class="form-floating">
                                 <textarea class="form-control" placeholder="Leave a comment here"
-                                    id="floatingTextarea" style="height: 150px;"></textarea>
+                                    id="keterangan_bantuan" name="keterangan_bantuan" style="height: 150px;"></textarea>
                                 <label for="floatingTextarea">Tuliskan nama-nama korban</label>
                             </div>
                             <br><h6 class="mb-4">Petugas Piket</h6>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Nama Petugas Piket</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                <label for="petugas_piket" class="form-label">Nama Petugas Piket</label>
+                                <input type="text" class="form-control" id="petugas_piket" name="petugas_piket"
                                     aria-describedby="emailHelp">
                                 <div id="emailHelp" class="form-text">
                                 </div>
