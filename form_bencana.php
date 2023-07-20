@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>DASHMIN - Bootstrap Admin Template</title>
+    <title>SIPELBA - Sistem Pelaporan Bencana</title>
+    <link rel="shortcut icon" href="logo_bpbd.png">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -35,53 +36,102 @@
     <!-- Bagian body HTML -->
     
     <?php
-    // Mengimpor file connection.php
-    require 'connection.php';
+// Mengimpor file connection.php
+require 'connection.php';
 
-    // Menangkap data yang dikirim melalui method POST
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $tanggal = $_POST['tanggal'];
-        $waktu = $_POST['waktu'];
-        $alamat = $_POST['alamat'];
-        $rw = $_POST['rw'];
-        $rt = $_POST['rt'];
-        $dusun = $_POST['dusun'];
-        $desa = $_POST['desa'];
-        $kecamatan = $_POST['kecamatan'];
-        $koordinat = $_POST['koordinat'];
-        $jenis_bencana = $_POST['jenis_bencana'];
-        $kronologi = $_POST['kronologi'];
-        $kerusakan = $_POST['kerusakan'];
-        $korban_jiwa = $_POST['korban_jiwa'];
-        $korban_lk = $_POST['korban_lk'];
-        $korban_pr = $_POST['korban_pr'];
-        $fasum = $_POST['fasum'];
-        $infra = $_POST['infra'];
-        $harta = $_POST['harta'];
-        $unit_usaha = $_POST['unit_usaha'];
-        $kerugian = $_POST['kerugian'];
-        $nama_korban = $_POST['nama_korban'];
-        $jumlah_luka = $_POST['jumlah_luka'];
-        $jumlah_hilang = $_POST['jumlah_hilang'];
-        $keterangan_bantuan = $_POST['keterangan_bantuan'];
-        $petugas_piket = $_POST['petugas_piket'];
-        // Tambahkan variabel dan nama kolom lainnya sesuai dengan data yang ingin Anda masukkan ke tabel
+// Menangkap data yang dikirim melalui method POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Tangkap data POST seperti sebelumnya...
+    $tanggal = $_POST['tanggal'];
+    $waktu = $_POST['waktu'];
+    $alamat = $_POST['alamat'];
+    $rw = $_POST['rw'];
+    $rt = $_POST['rt'];
+    $dusun = $_POST['dusun'];
+    $desa = $_POST['desa'];
+    $kecamatan = $_POST['kecamatan'];
+    $koordinat = $_POST['koordinat'];
+    $jenis_bencana = $_POST['jenis_bencana'];
+    $kronologi = $_POST['kronologi'];
+    $kerusakan = $_POST['kerusakan'];
+    $korban_jiwa = $_POST['korban_jiwa'];
+    $korban_lk = $_POST['korban_lk'];
+    $korban_pr = $_POST['korban_pr'];
+    $fasum = $_POST['fasum'];
+    $infra = $_POST['infra'];
+    $harta = $_POST['harta'];
+    $unit_usaha = $_POST['unit_usaha'];
+    $kerugian = $_POST['kerugian'];
+    $nama_korban = $_POST['nama_korban'];
+    $jumlah_luka = $_POST['jumlah_luka'];
+    $jumlah_hilang = $_POST['jumlah_hilang'];
+    $keterangan_bantuan = $_POST['keterangan_bantuan'];
+    $petugas_piket = $_POST['petugas_piket'];
 
-        // Query SQL untuk memasukkan data ke dalam tabel input_laporan_bencana
-        $query = "INSERT INTO input_laporan_bencana (tanggal, waktu, alamat, rw, rt, dusun, desa, kecamatan, koordinat, jenis_bencana, kronologi, kerusakan, korban_jiwa, korban_lk, korban_pr, fasum, infra, harta, unit_usaha, kerugian, nama_korban, jumlah_luka, jumlah_hilang, keterangan_bantuan, petugas_piket) VALUES ('$tanggal', '$waktu', '$alamat', '$rw', '$rt', '$dusun', '$desa', '$kecamatan', '$koordinat','$jenis_bencana', '$kronologi', '$kerusakan', '$korban_jiwa', '$korban_lk', '$korban_pr', '$fasum', '$infra', '$harta', '$unit_usaha', '$kerugian', '$nama_korban', '$jumlah_luka', '$jumlah_hilang', '$keterangan_bantuan', '$petugas_piket')";
-        // Tambahkan query untuk memasukkan data ke dalam kolom lainnya sesuai dengan id dan nama kolom
+    // Query SQL untuk memasukkan data ke dalam tabel input_laporan_bencana
+    $query = "INSERT INTO input_laporan_bencana (tanggal, waktu, alamat, rw, rt, dusun, desa, kecamatan, koordinat, jenis_bencana, kronologi, kerusakan, korban_jiwa, korban_lk, korban_pr, fasum, infra, harta, unit_usaha, kerugian, nama_korban, jumlah_luka, jumlah_hilang, keterangan_bantuan, petugas_piket) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-        // Jalankan query
-        $result = mysqli_query($connection, $query);
+    // Menyiapkan pernyataan (prepared statement)
+    $stmt = mysqli_prepare($connection, $query);
+
+    // Periksa apakah prepared statement berhasil
+    if ($stmt) {
+        // Bind parameter ke prepared statement seperti sebelumnya...
+        // Bind parameter ke prepared statement
+        mysqli_stmt_bind_param(
+            $stmt,
+            "sssssssssssssssssssssssss", // Sesuaikan jumlah 's' sesuai dengan jumlah kolom (25 kolom tanpa kolom "id")
+            $tanggal,
+            $waktu,
+            $alamat,
+            $rw,
+            $rt,
+            $dusun,
+            $desa,
+            $kecamatan,
+            $koordinat,
+            $jenis_bencana,
+            $kronologi,
+            $kerusakan,
+            $korban_jiwa,
+            $korban_lk,
+            $korban_pr,
+            $fasum,
+            $infra,
+            $harta,
+            $unit_usaha,
+            $kerugian,
+            $nama_korban,
+            $jumlah_luka,
+            $jumlah_hilang,
+            $keterangan_bantuan,
+            $petugas_piket
+        );
+
+
+        // Eksekusi prepared statement
+        $result = mysqli_stmt_execute($stmt);
 
         // Periksa apakah data berhasil dimasukkan
         if ($result) {
             echo "Data berhasil dimasukkan ke dalam tabel input_laporan_bencana.";
         } else {
-            echo "Data gagal dimasukkan ke dalam tabel input_laporan_bencana.";
+            echo "Data gagal dimasukkan ke dalam tabel input_laporan_bencana: " . mysqli_error($connection);
         }
+
+        // Tutup prepared statement
+        mysqli_stmt_close($stmt);
+    } else {
+        // Jika terjadi kesalahan dalam membuat prepared statement
+        echo "Error: " . mysqli_error($connection);
     }
-    ?>
+
+    // Tutup koneksi
+    mysqli_close($connection);
+}
+?>
+
+
     <div class="container-xxl position-relative bg-white d-flex p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
