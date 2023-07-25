@@ -1,9 +1,52 @@
+<?php
+session_start();
+require_once 'connection.php';
+
+$error = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_SESSION['username'];
+    $password_lama = $_POST['password_lama'];
+    $password_baru = $_POST['password_baru'];
+    $konfirmasi_password = $_POST['konfirmasi_password'];
+
+    // Cek apakah password konfirmasi sama dengan password baru
+    if ($password_baru !== $konfirmasi_password) {
+        $error = 'Password konfirmasi tidak sama.';
+    } else {
+        // Periksa apakah password lama yang dimasukkan benar
+        $conn = mysqli_connect('localhost', 'root', '', 'sipelda');
+        if (!$conn) {
+            die('Koneksi database gagal: ' . mysqli_connect_error());
+        }
+        
+        $sql = "SELECT * FROM register WHERE username = '$username' AND password = '$password_lama'";
+        $result = mysqli_query($conn, $sql);
+
+        if ($result && mysqli_num_rows($result) > 0) {
+            // Update password baru
+            $sql = "UPDATE register SET password = '$password_baru' WHERE username = '$username'";
+            if (mysqli_query($conn, $sql)) {
+                header('Location: dashboard.php');
+                exit;
+            } else {
+                $error = 'Terjadi kesalahan dalam memperbarui password.';
+            }
+        } else {
+            $error = 'Password lama yang dimasukkan salah.';
+        }
+        
+        mysqli_close($conn);
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>SIPELBA - Laporan Bantuan</title>
+    <title>SIPELBA - Ganti Password</title>
     <link rel="shortcut icon" href="logo_bpbd.png">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
@@ -30,6 +73,77 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 0;
+            position: relative;
+        }
+
+        .back-button {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .back-button a {
+            display: inline-block;
+            padding: 5px;
+            background: url('home_icon.png') no-repeat center center;
+            background-size: 100%;
+            width: 20px;
+            height: 20px;
+            text-indent: -9999px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 
 <body>
@@ -188,68 +302,36 @@
             <!-- Table Start -->
                     <div class="col-12">
                         <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Data Laporan Bantuan</h6>
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Jenis Bencana</th>
-                                            <th scope="col">Kecamatan</th>
-                                            <th scope="col">Desa</th>
-                                            <th scope="col">Dusun</th>
-                                            <th scope="col">Jumlah KK</th>
-                                            <th scope="col">Usia terdampak</th>
-                                            <th scope="col">Bantuan yang diberikan</th>
-                                            <th scope="col">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Banjir</td>
-                                            <td>Bululawang</td>
-                                            <td>Krebet</td>
-                                            <td>Lorem ipsum</td>
-                                            <td>100</td>
-                                            <td>Balita,Lansia</td>
-                                            <td>Beras 10000 kg, pempes 100</td>
-                                            <td>
-                                            <button type="submit" class="btn btn-warning"><i class="bi bi-pencil"></i></button>
-                                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Gempa</td>
-                                            <td>Gondanlegi</td>
-                                            <td>Bulupitu</td>
-                                            <td>Lorem ipsum</td>
-                                            <td>150</td>
-                                            <td>Balita,Lansia</td>
-                                            <td>Beras 15000 kg, pempes 100</td>
-                                            <td>
-                                            <button type="submit" class="btn btn-warning"><i class="bi bi-pencil"></i></button>
-                                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Banjir</td>
-                                            <td>Dau</td>
-                                            <td>Sumbersekar</td>
-                                            <td>Lorem ipsum</td>
-                                            <td>200</td>
-                                            <td>Balita,Lansia</td>
-                                            <td>Beras 20000 kg, pempes 100</td>
-                                            <td>
-                                            <button type="submit" class="btn btn-warning"><i class="bi bi-pencil"></i></button>
-                                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>                      
-                            </div>
+                            <h6 class="mb-4">Kelola Account</h6>
+                            <div class="container">
+        <div class="back-button">
+            <a href="hometamu.php">Kembali</a>
+        </div>
+        <h1>Ganti Password</h1>
+
+        <?php if ($error): ?>
+            <p class="error"><?php echo $error; ?></p>
+        <?php endif; ?>
+
+        <form method="POST" action="">
+            <div>
+                <label for="password_lama">Password Lama:</label>
+                <input type="password" id="password_lama" name="password_lama" required>
+            </div>
+            <div>
+                <label for="password_baru">Password Baru:</label>
+                <input type="password" id="password_baru" name="password_baru" required>
+            </div>
+            <div>
+                <label for="konfirmasi_password">Konfirmasi Password:</label>
+                <input type="password" id="konfirmasi_password" name="konfirmasi_password" required>
+            </div>
+            <div>
+                <button type="submit">Ganti Password</button>
+            </div>
+        </form>
+    </div>
+                            <!-- <button type="submit" class="btn btn-warning"><i class="bi bi-plus-circle"></i> Tambah Account</button> -->
                         </div>
                     </div>
                 </div>

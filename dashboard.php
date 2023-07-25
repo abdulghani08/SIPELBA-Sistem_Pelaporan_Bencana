@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>DASHMIN - Bootstrap Admin Template</title>
+    <title>SIPELBA - Dashboard</title>
     <link rel="shortcut icon" href="logo_bpbd.png">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
@@ -30,6 +30,8 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <<style>
+    </style>
 </head>
 
 <body>
@@ -46,7 +48,7 @@
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
-                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                <a href="dashboard.php" class="navbar-brand mx-4 mb-3">
                     <h3 class="text-warning"><i class="fa fa-hashtag me-2"></i>SIPELBA</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
@@ -60,7 +62,7 @@
                     </div> -->
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="dashboard.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Rekapan Laporan</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -77,7 +79,15 @@
                             <a href="element.html" class="dropdown-item">Laporan Penanganan</a>
                         </div>
                     </div>
-                    <a href="kelola_akun.html" class="nav-item nav-link"><i class="bi bi-person-lines-fill"></i>Kelola Account</a>
+                    <div class="nav-item dropdown">
+                    <a href="kelola_akun.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person-lines-fill"></i>Kelola Account</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="form_register.php" class="dropdown-item">Tambahkan User</a>
+                            <a href="lihat_user.php" class="dropdown-item">Lihat User</a>
+                            <a href="ganti_password.php" class="dropdown-item">Ganti Password</a>
+                            <a href="logout.php" class="dropdown-item" onclick="return confirm('Apakah anda yakin ingin keluar?')">Logout</a>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </nav>
@@ -89,7 +99,7 @@
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
-                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                <a href="dashboard.php" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-warning mb-0"><i class="fa fa-hashtag"></i></h2>
                 </a>
                 <a href="#" class="sidebar-toggler flex-shrink-0">
@@ -98,6 +108,13 @@
                 <form class="d-none d-md-flex ms-4">
                     <input class="form-control border-0" type="search" placeholder="Search">
                 </form>
+                <!-- <div style="text-align: center;">
+                    <p>
+                        <a class="menu-link disiplin" href='logout.php'>
+                            <img src="icon_logout.png" alt="Logout" style="width: 40px; height: 40px;">
+                        </a>
+                    </p>
+                </div> -->
                 <!-- <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -179,7 +196,7 @@
 
 
             <!-- Sale & Revenue Start -->
-            <div class="container-fluid pt-4 px-4">
+            <!-- <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <div class="col-sm-6 col-xl-3">
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
@@ -218,12 +235,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Sale & Revenue End -->
 
 
             <!-- Sales Chart Start -->
-            <div class="container-fluid pt-4 px-4">
+            <!-- <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light text-center rounded p-4">
@@ -244,12 +261,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Sales Chart End -->
 
 
             <!-- Recent Sales Start -->
-            <div class="container-fluid pt-4 px-4">
+            <!-- <div class="container-fluid pt-4 px-4">
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <h6 class="mb-0">Recent Salse</h6>
@@ -318,14 +335,14 @@
                         </table>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Recent Sales End -->
 
 
             <!-- Widgets Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
-                    <div class="col-sm-12 col-md-6 col-xl-4">
+                    <!-- <div class="col-sm-12 col-md-6 col-xl-4">
                         <div class="h-100 bg-light rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-2">
                                 <h6 class="mb-0">Messages</h6>
@@ -372,7 +389,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-sm-12 col-md-6 col-xl-4">
                         <div class="h-100 bg-light rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-4">
@@ -445,21 +462,15 @@
 
 
             <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
+            <!-- <div class="container-fluid pt-4 px-4">
                 <div class="bg-light rounded-top p-4">
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start">
                             &copy; <a href="#">Your Site Name</a>, All Right Reserved. 
                         </div>
-                        <div class="col-12 col-sm-6 text-center text-sm-end">
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                        </br>
-                        Distributed By <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
-                        </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Footer End -->
         </div>
         <!-- Content End -->

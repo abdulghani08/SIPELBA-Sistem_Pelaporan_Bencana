@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>SIPELBA - Laporan Bantuan</title>
+    <title>SIPELBA - Tambah User</title>
     <link rel="shortcut icon" href="logo_bpbd.png">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
@@ -30,6 +30,70 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+        }
+
+        .container {
+            width: 300px;
+            padding: 20px;
+            background-color: #fff;
+            margin: 0 auto;
+            margin-top: 100px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container table {
+            width: 100%;
+        }
+
+        .container table td {
+            padding: 5px;
+        }
+
+        .container input[type="text"],
+        .container input[type="password"],
+        .container select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .container input[type="submit"] {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: 3px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .container a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .container a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
@@ -188,68 +252,43 @@
             <!-- Table Start -->
                     <div class="col-12">
                         <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Data Laporan Bantuan</h6>
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Jenis Bencana</th>
-                                            <th scope="col">Kecamatan</th>
-                                            <th scope="col">Desa</th>
-                                            <th scope="col">Dusun</th>
-                                            <th scope="col">Jumlah KK</th>
-                                            <th scope="col">Usia terdampak</th>
-                                            <th scope="col">Bantuan yang diberikan</th>
-                                            <th scope="col">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Banjir</td>
-                                            <td>Bululawang</td>
-                                            <td>Krebet</td>
-                                            <td>Lorem ipsum</td>
-                                            <td>100</td>
-                                            <td>Balita,Lansia</td>
-                                            <td>Beras 10000 kg, pempes 100</td>
-                                            <td>
-                                            <button type="submit" class="btn btn-warning"><i class="bi bi-pencil"></i></button>
-                                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Gempa</td>
-                                            <td>Gondanlegi</td>
-                                            <td>Bulupitu</td>
-                                            <td>Lorem ipsum</td>
-                                            <td>150</td>
-                                            <td>Balita,Lansia</td>
-                                            <td>Beras 15000 kg, pempes 100</td>
-                                            <td>
-                                            <button type="submit" class="btn btn-warning"><i class="bi bi-pencil"></i></button>
-                                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Banjir</td>
-                                            <td>Dau</td>
-                                            <td>Sumbersekar</td>
-                                            <td>Lorem ipsum</td>
-                                            <td>200</td>
-                                            <td>Balita,Lansia</td>
-                                            <td>Beras 20000 kg, pempes 100</td>
-                                            <td>
-                                            <button type="submit" class="btn btn-warning"><i class="bi bi-pencil"></i></button>
-                                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>                      
-                            </div>
+                            <h6 class="mb-4">Kelola Account</h6>
+                            <div class="container">
+        <h2>Register Form</h2>
+        <form action="aksi_register.php" method="POST">
+            <table>
+                <tr>
+                    <td>Username</td>
+                    <td><input type="text" name="username"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="password"></td>
+                </tr>
+                <tr>
+                    <td>Level</td>
+                    <td>
+                        <select name="level">
+                            <option value="Admin">Admin</option>
+                            <option value="Lapangan">Lapangan</option>
+                            <option value="Operator">Operator</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>No. Hp</td>
+                    <td><input type="text" name="email"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="submit" class="btn btn-warning" name="register" value="Register"><i class="bi bi-plus-circle"></i> Tambah Account</button></td>
+                    <!-- <td><input type="submit" name="register" value="Register"></td> -->
+                </tr>
+            </table>
+        </form>
+        <!-- <a href="login.php">Login</a> -->
+    </div>
+                            <!-- <button type="submit" class="btn btn-warning"><i class="bi bi-plus-circle"></i> Tambah Account</button> -->
                         </div>
                     </div>
                 </div>

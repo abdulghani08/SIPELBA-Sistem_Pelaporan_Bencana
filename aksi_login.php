@@ -16,7 +16,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
         $_SESSION['level'] = $row['level'];
 
         if($row['level'] == "Admin"){
-            header("Location: index.html?level=Admin");
+            header("Location: dashboard.php?level=Admin");
         } elseif($row['level'] == "Operator"){
             header("Location: dasboard.php?level=Operator");
         } elseif($row['level'] == "Lapangan"){

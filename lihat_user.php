@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>SIPELBA - Laporan Bantuan</title>
+    <title>SIPELBA - Lihat User</title>
     <link rel="shortcut icon" href="logo_bpbd.png">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
@@ -30,6 +30,83 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .action-column {
+            width: 100px;
+        }
+
+        .delete-button {
+            background-color: #ff0000;
+            color: #ffffff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .delete-button:hover {
+            background-color: #cc0000;
+        }
+
+        .search-bar {
+            margin-bottom: 10px;
+        }
+
+                .add-button {
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .add-button a {
+            text-decoration: none;
+            color: #333;
+            background-color: #eee;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+
+        .add-button a:hover {
+            background-color: #ccc;
+        }
+    </style>
 </head>
 
 <body>
@@ -188,68 +265,81 @@
             <!-- Table Start -->
                     <div class="col-12">
                         <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Data Laporan Bantuan</h6>
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Jenis Bencana</th>
-                                            <th scope="col">Kecamatan</th>
-                                            <th scope="col">Desa</th>
-                                            <th scope="col">Dusun</th>
-                                            <th scope="col">Jumlah KK</th>
-                                            <th scope="col">Usia terdampak</th>
-                                            <th scope="col">Bantuan yang diberikan</th>
-                                            <th scope="col">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Banjir</td>
-                                            <td>Bululawang</td>
-                                            <td>Krebet</td>
-                                            <td>Lorem ipsum</td>
-                                            <td>100</td>
-                                            <td>Balita,Lansia</td>
-                                            <td>Beras 10000 kg, pempes 100</td>
-                                            <td>
-                                            <button type="submit" class="btn btn-warning"><i class="bi bi-pencil"></i></button>
-                                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Gempa</td>
-                                            <td>Gondanlegi</td>
-                                            <td>Bulupitu</td>
-                                            <td>Lorem ipsum</td>
-                                            <td>150</td>
-                                            <td>Balita,Lansia</td>
-                                            <td>Beras 15000 kg, pempes 100</td>
-                                            <td>
-                                            <button type="submit" class="btn btn-warning"><i class="bi bi-pencil"></i></button>
-                                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Banjir</td>
-                                            <td>Dau</td>
-                                            <td>Sumbersekar</td>
-                                            <td>Lorem ipsum</td>
-                                            <td>200</td>
-                                            <td>Balita,Lansia</td>
-                                            <td>Beras 20000 kg, pempes 100</td>
-                                            <td>
-                                            <button type="submit" class="btn btn-warning"><i class="bi bi-pencil"></i></button>
-                                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>                      
-                            </div>
+                            <h6 class="mb-4">Kelola Account</h6>
+                            <div class="container">
+    <div class="add-button">
+            <!-- <a href="akun.php">Kembali</a> -->
+        </div>
+        <br>
+        <h2>Lihat User</h2>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <form action="search_user.php" method="GET">
+                <input type="text" name="search" placeholder="Cari berdasarkan username">
+                <button type="submit">Cari</button>
+            </form>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Level</th>
+                    <th>No. Hp</th>
+                    <th class="action-column">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                // Menghubungkan dengan database
+                $koneksi = mysqli_connect("localhost", "root", "", "sipelda");
+
+                // Mengecek koneksi
+                if (mysqli_connect_errno()) {
+                    echo "Koneksi database gagal : " . mysqli_connect_error();
+                }
+
+                // Mendapatkan data dari tabel register
+                $query = mysqli_query($koneksi, "SELECT * FROM register");
+
+                while ($data = mysqli_fetch_assoc($query)) {
+                    echo "<tr>";
+                    echo "<td>".$data['username']."</td>";
+                    echo "<td>".$data['password']."</td>";
+                    echo "<td>".$data['level']."</td>";
+                    echo "<td>".$data['email']."</td>";
+                    echo '<td><button class="delete-button" onclick="hapusUser(\''.$data['username'].'\')">Hapus</button></td>';
+                    echo "</tr>";
+                }
+
+                // Menutup koneksi database
+                mysqli_close($koneksi);
+                ?>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+    function hapusUser(username) {
+        if (confirm("Anda yakin ingin menghapus user ini?")) {
+            // Mengirim permintaan penghapusan ke delete_user.php dengan parameter username
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "delete_user.php?username=" + username, true);
+            xhr.onload = function() {
+                if (xhr.readyState === xhr.DONE && xhr.status === 200) {
+                    alert(xhr.responseText); // Menampilkan pesan respons dari delete_user.php
+                    window.location.reload(); // Me-refresh halaman setelah menghapus data
+                } else {
+                    alert("Terjadi kesalahan saat menghapus user.");
+                }
+            };
+            xhr.send();
+        }
+    }
+</script>
+                            <!-- <button type="submit" class="btn btn-warning"><i class="bi bi-plus-circle"></i> Tambah Account</button> -->
                         </div>
                     </div>
                 </div>
