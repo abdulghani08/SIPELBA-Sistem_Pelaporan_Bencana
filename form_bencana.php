@@ -171,9 +171,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Input Laporan</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="form_bencana.php" class="dropdown-item">Laporan Bencana</a>
-                            <a href="laporan_bantuan.html" class="dropdown-item">Laporan Bantuan</a>
-                            <a href="element.html" class="dropdown-item">Laporan Penanganan</a>
+                            <a href="form_bencana.php" class="dropdown-item">Formulir Bencana</a>
+                            <a href="form_bantuan.html" class="dropdown-item">Formulir Bantuan</a>
+                            <a href="element.html" class="dropdown-item">Formulir Penanganan</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
