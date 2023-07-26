@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>SIPELBA - Tambah User</title>
+    <title>SIPELBA - Form Bencana</title>
     <link rel="shortcut icon" href="logo_bpbd.png">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
@@ -30,73 +30,108 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <<style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f1f1f1;
-        }
-
-        .container {
-            width: 300px;
-            padding: 20px;
-            background-color: #fff;
-            margin: 0 auto;
-            margin-top: 100px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-        }
-
-        .container h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .container table {
-            width: 100%;
-        }
-
-        .container table td {
-            padding: 5px;
-        }
-
-        .container input[type="text"],
-        .container input[type="password"],
-        .container select {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-
-        .container input[type="submit"] {
-            width: 100%;
-            padding: 8px;
-            border: none;
-            border-radius: 3px;
-            background-color: #4CAF50;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        .container input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-
-        .container a {
-            display: block;
-            text-align: center;
-            margin-top: 10px;
-            color: #4CAF50;
-            text-decoration: none;
-        }
-
-        .container a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 
 <body>
+    <!-- Bagian body HTML -->
+    
+    <?php
+// Mengimpor file connection.php
+require 'connection.php';
+
+// Menangkap data yang dikirim melalui method POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Tangkap data POST seperti sebelumnya...
+    $tanggal = $_POST['tanggal'];
+    $waktu = $_POST['waktu'];
+    $alamat = $_POST['alamat'];
+    $rw = $_POST['rw'];
+    $rt = $_POST['rt'];
+    $dusun = $_POST['dusun'];
+    $desa = $_POST['desa'];
+    $kecamatan = $_POST['kecamatan'];
+    $koordinat = $_POST['koordinat'];
+    $jenis_bencana = $_POST['jenis_bencana'];
+    $kronologi = $_POST['kronologi'];
+    $kerusakan = $_POST['kerusakan'];
+    $korban_jiwa = $_POST['korban_jiwa'];
+    $korban_lk = $_POST['korban_lk'];
+    $korban_pr = $_POST['korban_pr'];
+    $fasum = $_POST['fasum'];
+    $infra = $_POST['infra'];
+    $harta = $_POST['harta'];
+    $unit_usaha = $_POST['unit_usaha'];
+    $kerugian = $_POST['kerugian'];
+    $nama_korban = $_POST['nama_korban'];
+    $jumlah_luka = $_POST['jumlah_luka'];
+    $jumlah_hilang = $_POST['jumlah_hilang'];
+    $keterangan_bantuan = $_POST['keterangan_bantuan'];
+    $petugas_piket = $_POST['petugas_piket'];
+
+    // Query SQL untuk memasukkan data ke dalam tabel input_laporan_bencana
+    $query = "INSERT INTO input_laporan_bencana (tanggal, waktu, alamat, rw, rt, dusun, desa, kecamatan, koordinat, jenis_bencana, kronologi, kerusakan, korban_jiwa, korban_lk, korban_pr, fasum, infra, harta, unit_usaha, kerugian, nama_korban, jumlah_luka, jumlah_hilang, keterangan_bantuan, petugas_piket) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+    // Menyiapkan pernyataan (prepared statement)
+    $stmt = mysqli_prepare($connection, $query);
+
+    // Periksa apakah prepared statement berhasil
+    if ($stmt) {
+        // Bind parameter ke prepared statement seperti sebelumnya...
+        // Bind parameter ke prepared statement
+        mysqli_stmt_bind_param(
+            $stmt,
+            "sssssssssssssssssssssssss", // Sesuaikan jumlah 's' sesuai dengan jumlah kolom (25 kolom tanpa kolom "id")
+            $tanggal,
+            $waktu,
+            $alamat,
+            $rw,
+            $rt,
+            $dusun,
+            $desa,
+            $kecamatan,
+            $koordinat,
+            $jenis_bencana,
+            $kronologi,
+            $kerusakan,
+            $korban_jiwa,
+            $korban_lk,
+            $korban_pr,
+            $fasum,
+            $infra,
+            $harta,
+            $unit_usaha,
+            $kerugian,
+            $nama_korban,
+            $jumlah_luka,
+            $jumlah_hilang,
+            $keterangan_bantuan,
+            $petugas_piket
+        );
+
+
+        // Eksekusi prepared statement
+        $result = mysqli_stmt_execute($stmt);
+
+        // Periksa apakah data berhasil dimasukkan
+        if ($result) {
+            echo "Data berhasil dimasukkan ke dalam tabel input_laporan_bencana.";
+        } else {
+            echo "Data gagal dimasukkan ke dalam tabel input_laporan_bencana: " . mysqli_error($connection);
+        }
+
+        // Tutup prepared statement
+        mysqli_stmt_close($stmt);
+    } else {
+        // Jika terjadi kesalahan dalam membuat prepared statement
+        echo "Error: " . mysqli_error($connection);
+    }
+
+    // Tutup koneksi
+    mysqli_close($connection);
+}
+?>
+
+
     <div class="container-xxl position-relative bg-white d-flex p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -249,51 +284,45 @@
             <!-- Navbar End -->
 
 
-            <!-- Table Start -->
-                    <div class="col-12">
+            <!-- Form Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-100 col-xl-100">
                         <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Kelola Account</h6>
-                            <div class="container">
-        <h2>Register Form</h2>
-        <form action="aksi_register.php" method="POST">
-            <table>
-                <tr>
-                    <td>Username</td>
-                    <td><input type="text" name="username"></td>
-                </tr>
-                <tr>
-                    <td>Password</td>
-                    <td><input type="password" name="password"></td>
-                </tr>
-                <tr>
-                    <td>Level</td>
-                    <td>
-                        <select name="level">
-                            <option value="Admin">Admin</option>
-                            <option value="Lapangan">Lapangan</option>
-                            <option value="Operator">Operator</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>No. Hp</td>
-                    <td><input type="text" name="email"></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><button type="submit" class="btn btn-warning" name="register" value="Register"><i class="bi bi-plus-circle"></i> Tambah Account</button></td>
-                    <!-- <td><input type="submit" name="register" value="Register"></td> -->
-                </tr>
-            </table>
-        </form>
-        <!-- <a href="login.php">Login</a> -->
-    </div>
-                            <!-- <button type="submit" class="btn btn-warning"><i class="bi bi-plus-circle"></i> Tambah Account</button> -->
+                            <form method="POST" action="">
+                                <h1 class="mb-4">Registrasi</h1>
+                            <div class="mb-3">
+                                <label for="tanggal" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="tanggal" name="tanggal"
+                                    aria-describedby="emailHelp"> 
+                            </div>
+                            <div class="mb-3">
+                                <label for="waktu" class="form-label">E-mail</label>
+                                <input type="text" class="form-control" id="waktu" name="waktu"
+                                    aria-describedby="emailHelp">
+                            </div>
+                            <label for="rw" class="form-label">Status</label>
+                            <select class="form-select form-select-sm mb-3" id="rw" name="rw" aria-label=".form-select-sm example">
+                                <option selected>Pilih Status</option>
+                                <option value="1">Admin</option>
+                                <option value="2">Lapangan</option>
+                                <option value="3">Operator</option>
+                    
+                            </select>
+                            <div class="mb-3">
+                                <label for="petugas_piket" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="petugas_piket" name="petugas_piket"
+                                    aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text">
+                                </div>
+                            </div>
+                                <button type="submit" class="btn btn-primary">Registrasi</button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Table End -->
+            <!-- Form End -->
 
 
             <!-- Footer Start -->
