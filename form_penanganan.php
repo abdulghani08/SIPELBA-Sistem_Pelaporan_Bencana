@@ -322,13 +322,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     aria-describedby="emailHelp">
                             </div>
 
-                            <div class="mb-3">
-                                <label for="waktu" class="form-label">Lokasi Kejadian</label>
-                                <input type="text" class="form-control" id="waktu" name="waktu"
-                                    aria-describedby="emailHelp">
+
+                            <div id="map-container-google-2" class="z-depth-1-half map-container form-check-inline" >
+                                <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                                style="border:0" allowfullscreen></iframe>
                             </div>
 
-                            <div class="mb-3">
+                            <div class="mb-3 form-check-inline">
                                 <label for="waktu" class="form-label">Lokasi Kejadian</label>
                                 <input type="text" class="form-control" id="waktu" name="waktu"
                                     aria-describedby="emailHelp">
@@ -410,6 +410,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                             </label>
                                         </div>
                                </div>
+
+                               <label for="kronologi" class="form-label">Nama Korban</label>
+                                <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Leave a comment here"
+                                    id="kronologi" name="kronologi" style="height: 150px;"></textarea>
+                                <label for="floatingTextarea">Masukan nama sesuai dengan KTP</label>
+                                </div>
 
                                <div class="mb-3">
                                     <label for="korban_pr" class="form-label">Jumlah Jiwa</label>
