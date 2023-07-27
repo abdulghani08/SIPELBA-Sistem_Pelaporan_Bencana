@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>SIPELBA - Form Bantuan</title>
+    <title>SIPELBA - Kelola Akun</title>
     <link rel="shortcut icon" href="logo_bpbd.png">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
@@ -36,7 +36,7 @@
     <div class="container-xxl position-relative bg-white d-flex p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-warning" style="width: 3rem; height: 3rem;" role="status">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
@@ -64,21 +64,21 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Rekapan Laporan</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="laporan_bencana.html" class="dropdown-item">Laporan Bencana</a>
-                            <a href="laporan_bantuan.html" class="dropdown-item">Laporan Bantuan</a>
-                            <a href="element.html" class="dropdown-item">Laporan Penanganan</a>
+                            <a href="laporan_bencana.php" class="dropdown-item">Laporan Bencana</a>
+                            <a href="laporan_bantuan.php" class="dropdown-item">Laporan Bantuan</a>
+                            <a href="laporan_penanganan.php" class="dropdown-item">Laporan Penanganan</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Input Laporan</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="form_bencana.php" class="dropdown-item">Formulir Bencana</a>
-                            <a href="form_bantuan.html" class="dropdown-item">Formulir Bantuan</a>
-                            <a href="form_penanganan.html" class="dropdown-item">Formulir Penanganan</a>
+                            <a href="form_bantuan.php" class="dropdown-item">Formulir Bantuan</a>
+                            <a href="form_penanganan.php" class="dropdown-item">Formulir Penanganan</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
-                    <a href="kelola_akun.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person-lines-fill"></i>Kelola Account</a>
+                    <a href="kelola_akun.php" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person-lines-fill"></i>Kelola Account</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="form_register.php" class="dropdown-item">Tambahkan User</a>
                             <a href="lihat_user.php" class="dropdown-item">Lihat User</a>
@@ -185,63 +185,100 @@
             <!-- Navbar End -->
 
 
-            <!-- Form Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-50">
+            <!-- Table Start -->
+                    <div class="col-12">
                         <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Form Pelaporan Bantuan</h6>
-                            <form>
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Jenis Bencana</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Kecamatan</label>
-                                    <input type="email" class="form-control" id="exampleInputPassword1">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Desa</label>
-                                    <input type="email" class="form-control" id="exampleInputPassword1">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Dusun</label>
-                                    <input type="email" class="form-control" id="exampleInputPassword1">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Jumlah KK terdampak</label>
-                                    <input type="email" class="form-control" id="exampleInputPassword1">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Jumlah Korban Jiwa</label>
-                                    <input type="email" class="form-control" id="exampleInputPassword1">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Diberikan pada tanggal</label>
-                                    <input type="date" class="form-control" id="exampleInputPassword1">
-                                </div>
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a comment here"
-                                        id="floatingTextarea" style="height: 150px;"></textarea>
-                                    <label for="floatingTextarea">Bantuan apa yang diberikan</label>
-                                </div>
-                                <hr>
-                                <button type="submit" class="btn btn-warning">Laporkan</button>
-                            </form>
+                            <h6 class="mb-4">Kelola Account</h6>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">First Name</th>
+                                            <th scope="col">Last Name</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>John</td>
+                                            <td>Doe</td>
+                                            <td>jhon@email.com</td>
+                                            <td>
+                                                <select class="form-select" id="floatingSelect"
+                                                    aria-label="Floating label select example">
+                                                    <option selected>pilih status</option>
+                                                    <option value="1">admin</option>
+                                                    <option value="2">koordinator</option>
+                                                    <option value="3">lapangan</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                            <button type="submit" class="btn btn-warning"><i class="bi bi-pencil"></i></button>
+                                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>mark@email.com</td>
+                                            <td>
+                                                <select class="form-select" id="floatingSelect"
+                                                    aria-label="Floating label select example">
+                                                    <option selected>pilih status</option>
+                                                    <option value="1">admin</option>
+                                                    <option value="2">koordinator</option>
+                                                    <option value="3">lapangan</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <button type="submit" class="btn btn-warning"><i class="bi bi-pencil"></i></button>
+                                                <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>jacob@email.com</td>
+                                            <td>
+                                                <select class="form-select" id="floatingSelect"
+                                                    aria-label="Floating label select example">
+                                                    <option selected>pilih status</option>
+                                                    <option value="1">admin</option>
+                                                    <option value="2">koordinator</option>
+                                                    <option value="3">lapangan</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <button type="submit" class="btn btn-warning"><i class="bi bi-pencil"></i></button>
+                                                <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                                                </td>
+                                        </tr>
+                                    </tbody>
+                                </table>                      
+                            </div>
+                            <button type="submit" class="btn btn-warning"><i class="bi bi-plus-circle"></i> Tambah Account</button>
                         </div>
                     </div>
-                    
-            <!-- Form End -->
+                </div>
+            </div>
+            <!-- Table End -->
 
 
+            <!-- Footer Start -->
             
+            <!-- Footer End -->
         </div>
         <!-- Content End -->
 
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-warning btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
     <!-- JavaScript Libraries -->
