@@ -368,7 +368,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <br><h6 class="mb-4">Kejadian Musibah/ Bencana</h6>
                             <label for="jenis_bencana" class="form-label">Jenis Bencana/ Kejadian</label>
                             <select class="form-select form-select-sm mb-3" id="jenis_bencana" name="jenis_bencana" aria-label=".form-select-sm example">
-                                <option selected>Pilih Jenis Bencara</option>
+                                <option selected>Pilih Jenis Bencana</option>
                                 <option value="Tanah Longsor">Tanah Longsor</option>
                                 <option value="Banjir Luapan">Banjir Luapan</option>
                                 <option value="Tanah Ambles">Tanah Ambles</option>
@@ -381,6 +381,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <option value="Rumah Tersambar Petir">Rumah Tersambar Petir</option>
                                 <option value="Atap Rumah Ambruk">Atap Rumah Ambruk</option>
                             </select>
+                             
+                            <label for="kronologi" class="form-label">*Masukan jenis bencana apabila tidak tertera pada daftar diatas</label>
+                            <input class="form-control form-control-sm mb-3" type="text" placeholder="masukan bencana lainya"
+                                aria-label=".form-control-sm example">
+      
                             <label for="kronologi" class="form-label">Kronologi Kejadian</label>
                             <div class="form-floating">
                                 <textarea class="form-control" placeholder="Leave a comment here"
