@@ -76,7 +76,7 @@
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="form_bencana.php" class="dropdown-item">Formulir Bencana</a>
                             <a href="form_bantuan.html" class="dropdown-item">Formulir Bantuan</a>
-                            <a href="element.html" class="dropdown-item">Formulir Penanganan</a>
+                            <a href="form_penanganan.html" class="dropdown-item">Formulir Penanganan</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
