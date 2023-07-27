@@ -188,7 +188,7 @@
             <!-- Table Start -->
                     <div class="col-12">
                         <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Data Laporan Bantuan</h6>
+                            <h2 class="mb-4">Data Laporan Bantuan</h2>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
@@ -219,6 +219,7 @@
                                             <td>-</td>
                                             <td>-</td>
                                             <td>
+                                            <button type="submit" class="btn btn-info"><i class="bi bi-list"></i></button>
                                             <button type="submit" class="btn btn-warning"><i class="bi bi-pencil"></i></button>
                                             <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                                             </td>
@@ -235,6 +236,7 @@
                                             <td>-</td>
                                             <td>-</td>
                                             <td>
+                                            <button type="submit" class="btn btn-info"><i class="bi bi-list"></i></button>
                                             <button type="submit" class="btn btn-warning"><i class="bi bi-pencil"></i></button>
                                             <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                                             </td>
@@ -251,6 +253,7 @@
                                             <td>-</td>
                                             <td>-</td>
                                             <td>
+                                            <button type="submit" class="btn btn-info"><i class="bi bi-list"></i></button>
                                             <button type="submit" class="btn btn-warning"><i class="bi bi-pencil"></i></button>
                                             <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                                             </td>
