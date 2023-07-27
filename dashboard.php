@@ -68,7 +68,7 @@
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="laporan_bencana.html" class="dropdown-item">Laporan Bencana</a>
                             <a href="laporan_bantuan.html" class="dropdown-item">Laporan Bantuan</a>
-                            <a href="element.html" class="dropdown-item">Laporan Penanganan</a>
+                            <a href="laporan_penanganan.php" class="dropdown-item">Laporan Penanganan</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
