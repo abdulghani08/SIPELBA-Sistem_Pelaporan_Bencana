@@ -289,6 +289,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-50">
                         <div class="bg-light rounded h-100 p-4">
+                        <br><h2 class="mb-4">Laporan Bencana</h2>
+                        
                             <form method="POST" action="">
                                 <h6 class="mb-4">Waktu Terjadi Bencana</h6>
                             <div class="mb-3">
