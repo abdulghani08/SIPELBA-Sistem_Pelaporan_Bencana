@@ -449,6 +449,65 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     <input type="Number" class="form-control" id="korban_pr" name="korban_pr"
                                         aria-describedby="emailHelp">
                                 </div>
+
+                                <br><h5 class="mb-3">Tafsiran Kerusakan</h5>
+                                <hr>
+
+                                <div class="mb-3">
+                                <label for="kerugian" class="form-label">Kerugian (Rp)</label>
+                                <input type="number" class="form-control" id="kerugian" name="kerugian"
+                                    aria-describedby="emailHelp">
+                                 </div>
+
+                                <label for="kronologi" class="form-label">Kebutuhan Mendesak</label>
+                                <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Leave a comment here"
+                                    id="kronologi" name="kronologi" style="height: 150px;"></textarea>
+                                <label for="floatingTextarea">Kebutuhan apa saja yang dibutuhkan</label>
+                                </div>
+
+                                <label for="kronologi" class="form-label">Upaya Yang Dilakukan</label>
+                                <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Leave a comment here"
+                                    id="kronologi" name="kronologi" style="height: 150px;"></textarea>
+                                <label for="floatingTextarea">Upaya apa saja yang dilakukan</label>
+                                </div>
+
+                                <label for="kronologi" class="form-label">Kendala</label>
+                                <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Leave a comment here"
+                                    id="kronologi" name="kronologi" style="height: 150px;"></textarea>
+                                <label for="floatingTextarea">Kendala apa saja yang dialami</label>
+                                </div>
+
+                                <label for="kronologi" class="form-label">Instansi Yang Terlibat</label>
+                                <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Leave a comment here"
+                                    id="kronologi" name="kronologi" style="height: 150px;"></textarea>
+                                <label for="floatingTextarea">Instansi apa saja yang terlibat</label>
+                                 </div>
+
+                                 <div class="mb-3">
+                                <label for="formFileMultiple" class="form-label">Dokumentasi Kejadian</label>
+                                <input class="form-control" type="file" id="formFileMultiple" multiple>
+                                </div>
+                                <div class="mb-3">
+                                <label for="formFileMultiple" class="form-label">Dokumentasi KTP</label>
+                                <input class="form-control" type="file" id="formFileMultiple" multiple>
+                                </div>
+                                <div class="mb-3">
+                                <label for="formFileMultiple" class="form-label">Dokumentasi KK</label>
+                                <input class="form-control" type="file" id="formFileMultiple" multiple>
+                                </div>
+
+                                <br><h6 >Nama Pelapor</h6>
+                                <div class="mb-3">
+                                <input type="text" class="form-control" id="petugas_piket" name="petugas_piket"
+                                    aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text">
+                                </div>
+                                </div>
+
                             <hr>
                                 <button type="submit" class="btn btn-primary">Simpan Data</button>
                             </form>
