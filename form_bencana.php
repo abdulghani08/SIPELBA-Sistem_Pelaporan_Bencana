@@ -388,7 +388,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <label for="floatingTextarea">Jelaskan Kronologi Kejadian</label>
                             </div>
                             <br><h6 class="mb-4">Dampak</h6>
-                            <label for="kerusakan" class="form-label">Kerusakan Rumah :</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <label class="form-check-label" for="inlineCheckbox1">Rusak Ringan</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                <label class="form-check-label" for="inlineCheckbox2">Rusak Sedang</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                <label class="form-check-label" for="inlineCheckbox2">Rusak Berat</label>
+                            </div>
+                            <hr>
+                            <label for="kerusakan" class="form-label">Kerusakan :</label>
                             <div class="form-floating">
                                 <textarea class="form-control" placeholder="Leave a comment here"
                                     id="kerusakan" name="kerusakan" style="height: 150px;"></textarea>
@@ -405,29 +418,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <label for="korban_lk" class="form-label">Jumlah Korban Laki-laki</label>
                                 <input type="Number" class="form-control" id="korban_lk" name="korban_lk"
                                     aria-describedby="emailHelp">
-                                <div id="emailHelp" class="form-text">
-                                </div>
                             </div>
                             <div class="mb-3">
                                 <label for="korban_pr" class="form-label">Jumlah Korban Perempuan</label>
                                 <input type="Number" class="form-control" id="korban_pr" name="korban_pr"
                                     aria-describedby="emailHelp">
-                                <div id="emailHelp" class="form-text">
-                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="korban_pr" class="form-label">Jumlah KK terdampak</label>
+                                <input type="Number" class="form-control" id="korban_pr" name="korban_pr"
+                                    aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
                                 <label for="fasum" class="form-label">Kerusakan Fasilitas Umum</label>
                                 <input type="text" class="form-control" id="fasum" name="fasum"
                                     aria-describedby="emailHelp">
-                                <div id="emailHelp" class="form-text">
-                                </div>
                             </div>
                             <div class="mb-3">
                                 <label for="infra" class="form-label">Kerusakan Infrastruktur</label>
                                 <input type="text" class="form-control" id="infra" name="infra"
                                     aria-describedby="emailHelp">
-                                <div id="emailHelp" class="form-text">
-                                </div>
                             </div>
                             <div class="mb-3">
                                 <label for="harta" class="form-label">Harta Benda</label>
@@ -447,8 +457,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <label for="kerugian" class="form-label">Kerugian (Rp)</label>
                                 <input type="number" class="form-control" id="kerugian" name="kerugian"
                                     aria-describedby="emailHelp">
-                                <div id="emailHelp" class="form-text">
-                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="formFileMultiple" class="form-label">Dokumentasi Kerusakan Foto/Gambar</label>
+                                <input class="form-control" type="file" id="formFileMultiple" multiple>
                             </div>
                             <br><h6 class="mb-4">Korban</h6>
                             <label for="nama_korban" class="form-label">Nama-nama Korban terkena dampak</label>
@@ -468,14 +480,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <label for="jumlah_hilang" class="form-label">Jumlah Hilang</label>
                                 <input type="number" class="form-control" id="jumlah_hilang" name="jumlah_hilang"
                                     aria-describedby="emailHelp">
-                                <div id="emailHelp" class="form-text">
-                                </div>
                             </div>
                             <label for="keterangan_bantuan" class="form-label">Keterangan Bantuan yang telah diberikan</label>
                             <div class="form-floating">
                                 <textarea class="form-control" placeholder="Leave a comment here"
                                     id="keterangan_bantuan" name="keterangan_bantuan" style="height: 150px;"></textarea>
                                 <label for="floatingTextarea">Tuliskan nama-nama korban</label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="formFileMultiple" class="form-label">Dokumentasi Kerusakan Foto/Gambar</label>
+                                <input class="form-control" type="file" id="formFileMultiple" multiple>
                             </div>
                             <br><h6 class="mb-4">Petugas Piket</h6>
                             <div class="mb-3">
@@ -485,6 +499,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <div id="emailHelp" class="form-text">
                                 </div>
                             </div>
+
+                          
+
                                 <button type="submit" class="btn btn-primary">Simpan Data</button>
                             </form>
                         </div>
