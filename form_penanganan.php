@@ -330,7 +330,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 tabindex="0"></iframe>
                             </div>
 
-                            <div class="mb-3 form-check-inline">
+                            <div class="mb-3">
                                 <label for="waktu" class="form-label">Lokasi Kejadian</label>
                                 <input type="text" class="form-control" id="waktu" name="waktu"
                                     aria-describedby="emailHelp">
