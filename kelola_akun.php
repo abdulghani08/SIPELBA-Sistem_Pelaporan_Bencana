@@ -187,7 +187,7 @@
 
 
             <!-- Table Start -->
-                    <div class="col-12">
+                    <div class="col-12 text-secondary">
                         <div class="bg-light rounded h-100 p-4">
                             <h6 class="mb-4">Kelola Account</h6>
                             <div class="table-responsive">

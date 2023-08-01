@@ -1,0 +1,80 @@
+.surat {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm;
+    margin: 10mm auto;
+    border: 1px #D3D3D3 solid;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1)
+ }
+
+.header{
+    padding-top: 2px;
+}
+
+.imager img{
+
+    width: 100px;
+    height: 100px;
+}
+.imagel img{
+
+    width: 100px;
+    height: 110px;
+}
+
+
+.htext{
+    text-align: center;
+    line-height: 20px;
+}
+
+
+.header hr{
+    background-color: black;
+    border: none;
+    height: 2px;
+
+}
+
+.isi h2{
+ text-align: center;
+ font-size: 30px;
+}
+
+/* table, th, td {
+    border: 3px solid black;
+} */
+
+.table {
+    text-align: left;
+    font-size: 22px;
+    margin-bottom: 30px;
+    margin-left: 100px;
+}
+
+.table-jeda {
+    text-align: left;
+    font-size: 22px;
+    margin-left: 200px;
+}
+
+.table-isi {
+    text-align: justify;
+    text-emphasis: none;
+    font-size: 22px;
+    margin-bottom: 30px;
+    margin-left: 200px;
+    margin-right: 90px;
+}
+
+th {
+    display: table-cell;
+    font-weight: normal;
+} 
+
+tr{
+    
+}
+
