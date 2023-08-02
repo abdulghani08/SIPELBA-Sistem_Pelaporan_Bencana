@@ -63,7 +63,7 @@
                 <div class="navbar-nav w-100">
                     <a href="dashboard.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Rekapan Laporan</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-bar-chart-line-fill"></i>Rekapan Laporan</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="laporan_bencana.php" class="dropdown-item">Laporan Bencana</a>
                             <a href="laporan_bantuan.php" class="dropdown-item">Laporan Bantuan</a>
