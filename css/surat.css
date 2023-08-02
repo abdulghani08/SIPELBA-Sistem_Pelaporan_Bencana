@@ -10,16 +10,22 @@
  }
 
 .header{
-    padding-top: 2px;
+    display: flex;
+}
+
+.header h1{
+    font-size: 22px;
 }
 
 .imager img{
-
+    padding-top: 30px;
     width: 100px;
     height: 100px;
+    padding-left: 15px;
 }
 .imagel img{
-
+    padding-top: 25px;
+    padding-right: 15px;
     width: 100px;
     height: 110px;
 }
@@ -31,16 +37,16 @@
 }
 
 
-.header hr{
+hr{
     background-color: black;
     border: none;
-    height: 2px;
-
+    height: 5px;
 }
 
 .isi h2{
  text-align: center;
- font-size: 30px;
+ font-size: 24px;
+ margin-bottom: 8px;
 }
 
 /* table, th, td {
@@ -48,33 +54,79 @@
 } */
 
 .table {
+
     text-align: left;
-    font-size: 22px;
-    margin-bottom: 30px;
-    margin-left: 100px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-left: 15px;
 }
 
 .table-jeda {
     text-align: left;
-    font-size: 22px;
-    margin-left: 200px;
+    font-size: 18px;
+    margin-left: 80px;
+    margin-top: 10px;
 }
 
 .table-isi {
     text-align: justify;
-    text-emphasis: none;
-    font-size: 22px;
-    margin-bottom: 30px;
-    margin-left: 200px;
-    margin-right: 90px;
+    font-size: 18px;
+    margin-left: 80px;
+
 }
+
+.kronologi{
+    text-align: justify;
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-left: 80px;
+}
+
+
+.tanggal {
+    text-align: justify;
+    font-size: 18px;
+    margin-left: 580px;
+}
+
+.ttd1 {
+    float: left;
+    text-align: center;
+    font-size: 18px;
+    margin-left: 80px;
+}
+
+.ttd2 {
+    float: right;
+    text-align: center;
+    font-size: 18px;
+    margin-right: 38px;
+    padding-top: 20px;
+}
+
+.nama1 {
+    float: left;
+    text-align: center;
+    font-size: 18px;
+    margin-right: 280px;
+    margin-left: 100px;
+    margin-top: 80px;
+}
+
+.nama2 {
+    float: right;
+    text-align: center;
+    font-size: 18px;
+    margin-right: 50px;
+    margin-top: 80px;
+}
+
+
+
 
 th {
     display: table-cell;
     font-weight: normal;
 } 
 
-tr{
-    
-}
 
