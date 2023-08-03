@@ -191,6 +191,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <a href="element.html" class="dropdown-item">Laporan Penanganan</a>
                         </div>
                     </div>
+
+                    <a href="form_lapharian.php" class="nav-item nav-link"><i class="bi bi-file-earmark-bar-graph-fill"></i>Laporan Harian</a>
+
                     <div class="nav-item dropdown">
                     <a href="kelola_akun.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person-lines-fill"></i>Kelola Account</a>
                         <div class="dropdown-menu bg-transparent border-0">

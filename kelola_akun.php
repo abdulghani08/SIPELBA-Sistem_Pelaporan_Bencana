@@ -78,6 +78,9 @@
                             <a href="form_penanganan.php" class="dropdown-item">Formulir Penanganan</a>
                         </div>
                     </div>
+
+                    <a href="form_lapharian.php" class="nav-item nav-link"><i class="bi bi-file-earmark-bar-graph-fill"></i>Laporan Harian</a>
+
                     <div class="nav-item dropdown">
                     <a href="kelola_akun.php" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person-lines-fill"></i>Kelola Account</a>
                         <div class="dropdown-menu bg-transparent border-0">
