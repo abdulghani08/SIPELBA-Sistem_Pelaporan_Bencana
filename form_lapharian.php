@@ -166,19 +166,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <a href="laporan_bencana.php" class="dropdown-item">Laporan Bencana</a>
                             <a href="laporan_bantuan.php" class="dropdown-item">Laporan Bantuan</a>
                             <a href="laporan_penanganan.php" class="dropdown-item">Laporan Penanganan</a>
+                            <a href="laporan_harian.php" class="dropdown-item">Laporan Harian</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Input Laporan</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="form_bencana.php" class="dropdown-item">Formulir Bencana</a>
-                            <a href="form_bantuan.php" class="dropdown-item">Formulir Bantuan</a>
-                            <a href="form_penanganan.php" class="dropdown-item">Formulir Penanganan</a>
+                            <a href="form_bencana.php" class="dropdown-item">Laporan Bencana</a>
+                            <a href="form_bantuan.php" class="dropdown-item">Laporan Bantuan</a>
+                            <a href="form_penanganan.php" class="dropdown-item">Laporan Penanganan</a>
+                            <a href="form_lapharian.php" class="dropdown-item">Laporan Harian</a>
                         </div>
                     </div>
-
-                    <a href="form_lapharian.php" class="nav-item nav-link"><i class="bi bi-file-earmark-bar-graph-fill"></i>Laporan Harian</a>
-
+                    
                     <div class="nav-item dropdown">
                     <a href="kelola_akun.php" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person-lines-fill"></i>Kelola Account</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -368,18 +368,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <label for="formFileMultiple" class="form-label">Dokumentasi Kejadian</label>
                                 <input class="form-control" type="file" id="formFileMultiple" multiple>
                                 </div>
-                                <div class="mb-3">
-                                <label for="formFileMultiple" class="form-label">Dokumentasi KTP</label>
-                                <input class="form-control" type="file" id="formFileMultiple" multiple>
-                                </div>
-                                <div class="mb-3">
-                                <label for="formFileMultiple" class="form-label">Dokumentasi KK</label>
-                                <input class="form-control" type="file" id="formFileMultiple" multiple>
-                                </div>
-
 
                             <hr>
-                                <button type="submit" class="btn btn-primary">Simpan Data</button>
+                              <button type="submit" class="btn btn-primary">Cetak Data</button>
                             </form>
                         </div>
                     </div>
