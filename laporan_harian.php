@@ -197,55 +197,26 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
+                                            <th scope="col">Tanggal</th>
+                                            <th scope="col">Waktu</th>
                                             <th scope="col">Jenis Bencana</th>
-                                            <th scope="col">Kecamatan</th>
-                                            <th scope="col">Desa</th>
-                                            <th scope="col">Dusun</th>
-                                            <th scope="col">Jumlah KK</th>
-                                            <th scope="col">Usia terdampak</th>
-                                            <th scope="col">Bantuan yang diberikan</th>
+                                            <th scope="col">Kerusakan</th>
+                                            <th scope="col">Korban</th>
+                                            <th scope="col">Petugas Piket</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <th scope="row">1</th>
+                                            <td>08-16-2023</td>
+                                            <td>08.00</td>
                                             <td>Banjir</td>
-                                            <td>Bululawang</td>
-                                            <td>Krebet</td>
-                                            <td>Krebet</td>
-                                            <td>100</td>
-                                            <td>Balita,Lansia</td>
-                                            <td>Beras 10000 kg, pempes 100</td>
+                                            <td>Rumah rusak</td>
+                                            <td>-</td>
+                                            <td>Joko</td>
                                             <td>
-                                            <button type="submit" class="btn btn-warning"><i class="bi bi-pencil"></i></button>
-                                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Gempa</td>
-                                            <td>Gondanlegi</td>
-                                            <td>Bulupitu</td>
-                                            <td>Bulupitung</td>
-                                            <td>150</td>
-                                            <td>Balita,Lansia</td>
-                                            <td>Beras 15000 kg, pempes 100</td>
-                                            <td>
-                                            <button type="submit" class="btn btn-warning"><i class="bi bi-pencil"></i></button>
-                                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Banjir</td>
-                                            <td>Dau</td>
-                                            <td>Sumbersekar</td>
-                                            <td>Sumbersekar</td>
-                                            <td>200</td>
-                                            <td>Balita,Lansia</td>
-                                            <td>Beras 20000 kg, pempes 100</td>
-                                            <td>
+                                            <button type="submit" class="btn btn-info"><i class="bi bi-printer-fill"></i></button>
                                             <button type="submit" class="btn btn-warning"><i class="bi bi-pencil"></i></button>
                                             <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                                             </td>
