@@ -372,14 +372,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 tabindex="0"></iframe>
                             </div>
 
-                            <div class="mb-3">
-                                <label for="koordinat" class="form-label">Koordinat</label>
+                            <div class="mb-3 form-check-inline">
+                                <label for="koordinat" class="form-label">Longtitude</label>
                                 <input type="text" class="form-control" id="koordinat" name="koordinat"
                                     aria-describedby="emailHelp">
-                                <div class="form-text">Ambil dari google maps
-                                </div>
                             </div>
                             
+                            <div class="mb-3 form-check-inline">
+                                <label for="koordinat" class="form-label">Latitude</label>
+                                <input type="text" class="form-control" id="koordinat" name="koordinat"
+                                    aria-describedby="emailHelp">
+                            </div>
+
                             <br><h6 class="mb-4">Kejadian Musibah/ Bencana</h6>
                             <label for="jenis_bencana" class="form-label">Jenis Bencana/ Kejadian</label>
                             <select class="form-select form-select-sm mb-3" id="jenis_bencana" name="jenis_bencana" aria-label=".form-select-sm example">
