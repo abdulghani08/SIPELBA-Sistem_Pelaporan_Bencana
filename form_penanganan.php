@@ -334,8 +334,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 tabindex="0"></iframe>
                             </div>
 
-                            <div class="mb-3">
-                                <label for="waktu" class="form-label">Lokasi Kejadian</label>
+                            <div class="mb-3 form-check-inline">
+                                <label for="waktu" class="form-label">Longtitude</label>
+                                <input type="text" class="form-control" id="waktu" name="waktu"
+                                    aria-describedby="emailHelp">
+                            </div>
+
+                            <div class="mb-3 form-check-inline">
+                                <label for="waktu" class="form-label">latitude</label>
                                 <input type="text" class="form-control" id="waktu" name="waktu"
                                     aria-describedby="emailHelp">
                             </div>
