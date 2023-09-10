@@ -312,7 +312,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     id="alamat" name="alamat" style="height: 150px;"></textarea>
                                 <label for="floatingTextarea">exp: jl.moh.syafe'i no.1</label>
                             </div>
-                            <label for="rw" class="form-label">RW</label>
+                            <label for="rw" class="form-label">RT</label>
                             <select class="form-select form-select-sm mb-3" id="rw" name="rw" aria-label=".form-select-sm example">
                                 <option selected>Pilih RW</option>
                                 <option value="1">1</option>
@@ -322,7 +322,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <option value="5">5</option>
                                 <option value="6">6</option>
                             </select>
-                            <label for="rt" class="form-label">RT</label>
+                            <label for="rt" class="form-label">RW</label>
                             <select class="form-select form-select-sm mb-3" id="rt" name="rt" aria-label=".form-select-sm example">
                                 <option selected>Pilih RT</option>
                                 <option value="1">1</option>
@@ -520,7 +520,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div class="form-floating">
                                 <textarea class="form-control" placeholder="Leave a comment here"
                                     id="keterangan_bantuan" name="keterangan_bantuan" style="height: 150px;"></textarea>
-                                <label for="floatingTextarea">Tuliskan nama-nama korban</label>
+                                <label for="floatingTextarea">Tuliskan bantuan yang diberikan</label>
                             </div>
                             <div class="mb-3">
                                 <label for="formFileMultiple" class="form-label">Dokumentasi korban Foto/Gambar</label>
