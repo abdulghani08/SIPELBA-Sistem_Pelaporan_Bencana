@@ -45,28 +45,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tanggal = $_POST['tanggal'];
     $waktu = $_POST['waktu'];
     $alamat = $_POST['alamat'];
-    $rw = $_POST['rw'];
-    $rt = $_POST['rt'];
+    $rt = $_POST['rw'];
+    $rw = $_POST['rt'];
     $dusun = $_POST['dusun'];
     $desa = $_POST['desa'];
     $kecamatan = $_POST['kecamatan'];
-    $koordinat = $_POST['koordinat'];
+    $longtitude = $_POST['longtitude'];
+    $latitude = $_POST['latitude'];
     $jenis_bencana = $_POST['jenis_bencana'];
     $kronologi = $_POST['kronologi'];
+    $dampak = $_POST['dampak'];
     $kerusakan = $_POST['kerusakan'];
     $korban_jiwa = $_POST['korban_jiwa'];
     $korban_lk = $_POST['korban_lk'];
     $korban_pr = $_POST['korban_pr'];
+    $jml_kk = $_POST['jml_kk'];
     $fasum = $_POST['fasum'];
     $infra = $_POST['infra'];
     $harta = $_POST['harta'];
-    $unit_usaha = $_POST['unit_usaha'];
+    $usaha = $_POST['usaha'];
     $kerugian = $_POST['kerugian'];
+    $dok_kerusakan = $_POST['dok_kerusakan'];
     $nama_korban = $_POST['nama_korban'];
-    $jumlah_luka = $_POST['jumlah_luka'];
-    $jumlah_hilang = $_POST['jumlah_hilang'];
-    $keterangan_bantuan = $_POST['keterangan_bantuan'];
-    $petugas_piket = $_POST['petugas_piket'];
+    $jml_luka = $_POST['jml_luka'];
+    $jml_hilang = $_POST['jml_hilang'];
+    $bantuan = $_POST['bantuan'];
+    $petugas = $_POST['petugas'];
 
     // Query SQL untuk memasukkan data ke dalam tabel input_laporan_bencana
     $query = "INSERT INTO input_laporan_bencana (tanggal, waktu, alamat, rw, rt, dusun, desa, kecamatan, koordinat, jenis_bencana, kronologi, kerusakan, korban_jiwa, korban_lk, korban_pr, fasum, infra, harta, unit_usaha, kerugian, nama_korban, jumlah_luka, jumlah_hilang, keterangan_bantuan, petugas_piket) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -84,14 +88,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $tanggal,
             $waktu,
             $alamat,
-            $rw,
             $rt,
+            $rw,
             $dusun,
             $desa,
             $kecamatan,
-            $koordinat,
+            $longtitude,
+            $latitude,
             $jenis_bencana,
             $kronologi,
+            $dampak,
             $kerusakan,
             $korban_jiwa,
             $korban_lk,
@@ -99,12 +105,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $fasum,
             $infra,
             $harta,
-            $unit_usaha,
+            $usaha,
             $kerugian,
+            $dok_kerusakan,
             $nama_korban,
-            $jumlah_luka,
-            $jumlah_hilang,
-            $keterangan_bantuan,
+            $jml_luka,
+            $jml_hilang,
+            $bantuan,
             $petugas_piket
         );
 
