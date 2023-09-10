@@ -531,8 +531,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 </div>
                             </div>
 
-                          
-
                                 <button type="submit" class="btn btn-primary">Simpan Data</button>
                             </form>
                         </div>
