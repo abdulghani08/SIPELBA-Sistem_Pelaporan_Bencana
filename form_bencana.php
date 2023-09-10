@@ -519,7 +519,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <label for="floatingTextarea">Tuliskan nama-nama korban</label>
                             </div>
                             <div class="mb-3">
-                                <label for="formFileMultiple" class="form-label">Dokumentasi Kerusakan Foto/Gambar</label>
+                                <label for="formFileMultiple" class="form-label">Dokumentasi korban Foto/Gambar</label>
                                 <input class="form-control" type="file" id="formFileMultiple" multiple>
                             </div>
                             <br><h6 class="mb-4">Petugas Piket</h6>
